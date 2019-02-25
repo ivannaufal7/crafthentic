@@ -187,7 +187,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 .thumbnail-title{
   position: relative;
-  right: 5%;
+  right: 20%;
 }
 .thumbnail-title h2{
   font-size: 64px;
@@ -235,7 +235,14 @@ h1 { font-size: 1.5em; margin: 10px; }
   background: none;
   color: #2D3434;
 }
-
+.qty {
+    width: 80px;
+    height: 38px;
+    position: relative;
+    top: 4px;
+    text-align: center;
+    font-size: 18px;
+}
 /* Style the tab */
 .tab {
   overflow: hidden;

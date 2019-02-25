@@ -51,7 +51,7 @@
 </nav>
 
 	<section class="item">
-			<img src="img/thumb.png" width="600" height="600">
+			<img src="img/product1.jpg" width="455" height="450" id="thumb">
 			<div class="thumbnail-title">
 			<h2>Hijabb Ellysha Eve </h2>
 			<fieldset class="rating">
@@ -62,15 +62,20 @@
 <span class="fa fa-star"></span>
 			</fieldset><br>
 			<h3>Rp. 150.000</h3>
+      <form id='myform' method='POST' action='#'>
+          <input type='button' value='-' class='qtyminus btn btn-login' field='quantity' />
+          <input type='text' name='quantity' value='0' class='qty' />
+          <input type='button' value='+' class='qtyplus btn btn-login' field='quantity' />
+      </form>
 			<button id="belibrg">Beli Barang</button><br>
 			<button id="keranjang">+ Tambah Keranjang</button>
 		</div>
 	</section>
 	<div class="mini-img">
-			<img src="img/thumb.png" width="315">
-			<img src="img/thumb.png" width="315">
-			<img src="img/thumb.png" width="315">
-			<img src="img/thumb.png" width="315">
+			<img src="img/product1.jpg" width="110" height="100" id="product1">
+			<img src="img/product2.jpg" width="110" height="100" id="product2">
+			<img src="img/product3.jpg" width="110" height="100" id="product3">
+			<img src="img/product4.jpg" width="110" height="100" id="product4">
 		</div>
 	<section class="tabulasi">
 		<div class="tab">
@@ -167,4 +172,35 @@
 		  evt.currentTarget.className += " active";
 		}
 		document.getElementById("defaultOpen").click();
+
+    $(document).ready(function(){
+       $("#product1").click(function(){
+         $("#thumb").attr("src", "img/product1.jpg");
+       });
+       $("#product2").click(function(){
+         $("#thumb").attr("src", "img/product2.jpg");
+       });
+       $("#product3").click(function(){
+         $("#thumb").attr("src", "img/product3.jpg");
+       });
+       $("#product4").click(function(){
+         $("#thumb").attr("src", "img/product4.jpg");
+       });
+
+       $('.qtyplus').click(function(e){
+            var quantity = parseInt($('.qty').val());
+                
+                $('.qty').val(quantity + 1);
+            
+        });
+
+        $('.qtyminus').click(function(e){
+            e.preventDefault();
+            var quantity = parseInt($('.qty').val());
+                if(quantity>0){
+                $('.qty').val(quantity - 1);
+                }
+        });
+
+    });
 </script>
