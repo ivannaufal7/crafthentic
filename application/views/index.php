@@ -59,7 +59,7 @@
                 <div class="card-body">
                   <h4 class="card-title">John Doe</h4>
                   <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
+                  <a href="<?= base_url('index.php/Detailitem_control')?>" class="btn btn-primary btn-profile">See Profile</a>
                 </div>
               </div>
               </a>
