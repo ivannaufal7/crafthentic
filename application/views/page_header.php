@@ -20,6 +20,7 @@
       });
     </script>
     <title>Crafthentic</title>
+    <link rel="shotrcut icon" href="<?= base_url('assets/img/icon-site.png') ?>" type="image/x-icon">
 </head>
 <body class="home">
     <div class="col-lg-12">
