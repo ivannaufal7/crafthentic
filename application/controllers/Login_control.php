@@ -22,4 +22,17 @@ class Login_control extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
+	public function login(){
+		$valid = $this->form_validation;
+		$email = $this->input->post('email');
+		$password = $this->input->post('pass');
+		$valid->set_rules('email','email','required');
+		$valid->set_rules('pass','pass','required');
+		if($valid->run()){
+			$this->simple_login->login($email,$password);
+		}
+	}
+	public function logout(){
+		$this->simple_login->logout();
+	}
 }

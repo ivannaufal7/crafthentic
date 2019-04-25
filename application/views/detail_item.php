@@ -1,66 +1,32 @@
 <?php $this->load->view('page_header')?>
 
+<?php foreach ($detail as $row) {?>
+
 	<section class="item">
-			<img src="<?= base_url('assets/img/product1.jpg')?>" width="455" height="450" id="thumb">
+			<img src="<?= base_url('assets/img/').$row->foto_brg?>" width="455" height="450" id="thumb">
 			<div class="thumbnail-title">
-			<h2>Hijabb Ellysha Eve </h2>
-			<fieldset class="rating">
-   			 	<span class="fa fa-star" id="checked"></span>
-<span class="fa fa-star" id="checked"></span>
-<span class="fa fa-star" id="checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-			</fieldset><br>
-			<h3>Rp. 150.000</h3>
-      <form id='myform' method='POST' action='#'>
+			<h2><?= $row->nama_brg?> </h2>
+			<h3>Rp.<?= $row->harga_brg?></h3>
+      <form id='myform' method='POST' action='<?= base_url('index.php/detailitem_control/belibrg/').$row->id_brg?>'>
           <input type='button' value='-' class='qtyminus btn btn-login' field='quantity' />
-          <input type='text' name='quantity' value='1' class='qty' />
+          <input type='text' name='qty' value='1' class='qty' />
           <input type='button' value='+' class='qtyplus btn btn-login' field='quantity' />
+          <input type="submit" id="belibrg">Beli Barang</input><br>
       </form>
-			<button id="belibrg">Beli Barang</button><br>
+			
 			<button id="keranjang">+ Tambah Keranjang</button>
 		</div>
 	</section>
-	<div class="mini-img">
-			<img src="<?= base_url('assets/img/product1.jpg')?>" width="110" height="100" id="product1">
-			<img src="<?= base_url('assets/img/product2.jpg')?>" width="110" height="100" id="product2">
-			<img src="<?= base_url('assets/img/product3.jpg')?>" width="110" height="100" id="product3">
-			<img src="<?= base_url('assets/img/product4.jpg')?>" width="110" height="100" id="product4">
-		</div>
+  <?php }?>
 	<section class="tabulasi">
 		<div class="tab">
 		  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Deskripsi</button>
-		  <button class="tablinks" onclick="openCity(event, 'Paris')">Statistik Penjualan</button>
 		  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Ulasan Barang</button>
 		</div>
 
 		<div id="London" class="tabcontent">
-		  <p>Exclusive Gelang Kulit Hitam dengan buckle black Doff Titanium stainless steel anti karat.<br><br>
-
-			Warna Kulit Black Gotham,
-			Warna Buckle Black Doff / Matte.<br><br>
-
-			Warna sangat Elegan dan Mewah,
-			Membuat kesan Istimewa dan Tampan bagi siapapun yg memakainya.<br><br>
-
-			AWAS HARGA Kulit Moscow Armani Tidak Murah, jadi jangan tergiur dengan yang Harga Murah.
-			Model bisa sama, Tapi Kualitas BEDA.<br><br>
-
-			**Karena Kualitas selalu sebanding dengan Harga**<br><br>
-
-			Material;
-			- Kulit Moscow Armani original yang sudah melalui proses treatment sehingga tahan Air, Sabun, dan panas terik matahari.
-			Jadi aman dipakai saat mandi dan dipakai sehari hari tanpa lepas pakai.<br><br>
-
-			Size ready S M L XL 
-		</p>
+		  <p><?= $row->deskripsi?></p>
 		</div>
-
-		<div id="Paris" class="tabcontent">
-		  <h3>Paris</h3>
-		  <p>Paris is the capital of France.</p> 
-		</div>
-
 		<div id="Tokyo" class="tabcontent">
 		  <h3>Tokyo</h3>
 		  <p>Tokyo is the capital of Japan.</p>

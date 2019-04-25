@@ -53,89 +53,30 @@
         <div class="text-right lihat-semua"><a href="#">Lihat Semua</a></div>
         <div class="row item-produk">
             
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
+
+            <?php foreach ($barang as $row) {?>
+            <a href="<?= base_url('index.php/Detailitem_control/detailbrg/').$row->id_brg?>" class="link-item">
               <div class="card" style="width:300px">
-                <img class="card-img-top img-fluid" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
+                <img class="card-img-top img-fluid" src="<?= base_url('assets/img/').$row->foto_brg?>" alt="Card image" style="width:100%; height: 227px;">
                 <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
+                  <h4 class="card-title"><?= $row->nama_brg?></h4>
+                  <span class="badge badge-primary"><?= $row->kategori_brg?></span>
+                  <h4 class="text-success" style="margin-top: 12px;">Rp.<?= $row->harga_brg?></h4>
                 </div>
+                <?php if($this->simple_login->cek_login() && $this->session->userdata('id') == $row->id_pengguna){?>
+                <div>
+                  <a href="" class="text-warning">Edit</a>
+                  <a href="<?= base_url('index.php/home/deleteBrg/').$row->id_brg?>" class="text-danger">Delete</a>
+
+                </div>
+              <?php } ?>
               </div>
               </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-            <div class="card" style="width:300px">
-                <img class="card-img-top" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-            <div class="card" style="width:300px">
-                <img class="card-img-top" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-            <div class="card" style="width:300px">
-                <img class="card-img-top" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-              <div class="card" style="width:300px">
-                <img class="card-img-top img-fluid" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-            <div class="card" style="width:300px">
-                <img class="card-img-top" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-            <div class="card" style="width:300px">
-                <img class="card-img-top" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
-            <a href="<?= base_url('index.php/Detailitem_control')?>" class="link-item">
-            <div class="card" style="width:300px">
-                <img class="card-img-top" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary btn-profile">See Profile</a>
-                </div>
-              </div>
-            </a>
+            <?php
+          }
+          ?>
             
             </div>
-    </section>    
-        </div>
+      </section>
 </body>
 </html>

@@ -51,10 +51,24 @@
                 <li class="nav-item"><a href="#" class="nav-link"><i class="material-icons">mail</i></a></li>
                 <li class="nav-item"><a href="#" class="nav-link"><i class="material-icons">notifications</i></a></li>
             </ul>
-            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+            <ul class="nav navbar-nav flex-row justify-content-between">
+              <?php if($this->simple_login->cek_login() == true){?>
+                <li class="dropdown order-1">
+                    <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
+                      <?= $this->session->userdata('nama')?>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="<?= base_url('index.php/profil_control')?>">Profil Saya</a>
+                      <a class="dropdown-item" href="<?= base_url('index.php/uploadbrg_control')?>">Unggah Barang</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="<?= base_url('index.php/login_control/logout')?>">Logout</a>
+                    </div>
+                </li>
+              <?php }else{?>
                 <li class="dropdown order-1">
                     <a href="<?= base_url('index.php/login_control')?>" class="btn btn-login" >Login</a>
                 </li>
+              <?php } ?>
             </ul>
         </div>
     <!-- </div> -->
