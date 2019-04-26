@@ -7,7 +7,7 @@
     <div class="col-lg-12 body">
         <div class="boundary">
             <img src="<?= base_url('assets/img/login-bg.png')?>" height="100%" width="600px">
-            <div class="top-left logo-white"><img src="<?= base_url('assets/img/logo-white.png')?>" width="250px"></div>
+            <div class="top-left logo-white"><a href="<?= site_url('home/index')?>"><img src="<?= base_url('assets/img/logo-white.png')?>" width="250px"></a></div>
             <div class="top-left intro">Halo, <br> Selamat datang di CRAFTHENTIC</div>
         </div>
         <div class="login">
@@ -34,6 +34,9 @@
                 </div>
                 <br>
                 <input type="submit" name="register" value="Register"/>
+                <br>
+                <br>
+                <a href="<?= base_url('index.php/login_control/index')?>" class="link">Sudah punya akun klik disini?</a>
             </form>
         </div>
     </div>

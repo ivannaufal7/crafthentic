@@ -47,6 +47,10 @@
                   <h4><?= $row->nama_brg?></h4>
                   <span class="badge badge-primary"><?= $row->kategori_brg?></span>
                   <h4 class="text-success" style="margin-top: 12px;">Rp.<?= $row->harga_brg?></h4>
+                  <div>
+                    <a href="<?= site_url('uploadbrg_control/edit_barang/')?><?= $row->id_brg?>" class="btn btn-info">Edit</a>
+                    <a href="<?= base_url('index.php/home/deleteBrg/').$row->id_brg?>" class="btn btn-danger">Delete</a>
+                  </div>
                 </div>
               </div>
         <?php } ?>

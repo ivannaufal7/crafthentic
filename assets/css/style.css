@@ -123,7 +123,7 @@ h1 { font-size: 1.5em; margin: 10px; }
     position: relative;
     bottom: 20px;
 }
-.login form input[type="email"], .login form input[type="password"] {
+.login form input[type="email"], .login form input[type="password"], .login form input[type="text"] {
     width: 600px;
     height: 50px;
     margin-top: 16px;
@@ -381,3 +381,15 @@ table{
 .bungkus{
   position: relative;
 }*/
+/*Login view*/
+
+.link{
+  text-decoration: none;
+  margin-top: 16px;
+  padding-left: 13rem;
+  text-align: center;
+}
+
+.link:hover{
+  color: grey;
+}

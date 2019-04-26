@@ -14,6 +14,12 @@ class Uploadbrg_control extends CI_Controller {
         $this->load->view('uploadbarang');
     }
 
+    public function edit_barang($id)
+    {
+        $data['barang'] = $this->M_barang->getDataBarangWhere($id);
+        $this->load->view('edit_barang', $data);
+    }
+
     public function do_upload() {
     $config['upload_path']          = './assets/img/';
     $config['allowed_types']        = 'gif|jpg|png';
@@ -45,5 +51,15 @@ class Uploadbrg_control extends CI_Controller {
         }
     }
 }
-
+    public function do_update(){
+        $data = array(
+            'id_brg' => $this->input->post('id_brg'),
+            'nama_brg'=> $this->input->post('nama_brg'),
+            'harga_brg'=> $this->input->post('harga_brg'),
+            'deskripsi'=> $this->input->post('deskripsi'),
+            'kategori_brg'=> $this->input->post('kategori_brg'),
+            'tgl_post' => date('Y-m-d H:i:s'), 
+        );
+        $this->M_barang->updateBarang2($data['id_brg'],$data);
+    }
 }

@@ -19,5 +19,9 @@ class Home extends CI_Controller {
 		$query = $this->M_barang->deleteBarang("tb_barang",$id);
 		$_id = $this->db->get_where("tb_barang",["id_brg" => $id])->row();
 		redirect('Home');
+	}
+	public function edit()
+	{
+		$this->load->view('edit_barang');
 	}	
 }

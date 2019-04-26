@@ -54,5 +54,9 @@ class M_barang extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
-
+	function updateBarang2($id,$data){
+		$this->db->where('id_brg = ',$id);
+		$this->db->update('tb_barang', $data);
+		redirect('profil_control');
+	}
 }

@@ -54,7 +54,9 @@
         <div class="row item-produk">
             
 
-            <?php foreach ($barang as $row) {?>\
+            <?php 
+            if(!empty($barang)){
+            foreach ($barang as $row) {?>
             <a href="<?= base_url('index.php/Detailitem_control/detailbrg/').$row->id_brg?>" class="link-item">
               <div class="card" style="width:300px">
                 <img class="card-img-top img-fluid" src="<?= base_url('assets/img/').$row->foto_brg?>" alt="Card image" style="width:100%; height: 250px;">
@@ -65,17 +67,18 @@
                 </div>
                 <?php if($this->simple_login->cek_login() && $this->session->userdata('id') == $row->id_pengguna){?>
                 <div>
-                  <a href="" class="text-warning">Edit</a>
-                  <a href="<?= base_url('index.php/home/deleteBrg/').$row->id_brg?>" class="text-danger">Delete</a>
-
+                  <a href="" class="btn btn-info">Edit</a>
+                  <a href="<?= base_url('index.php/home/deleteBrg/').$row->id_brg?>" class="btn btn-danger">Delete</a>
                 </div>
               <?php } ?>
               </div>
               </a>
             <?php
-          }
-          ?>
-            
+          }} else {?>
+              <div style="width:100%;">
+                <h5 style="text-align: center;">Belum Ada Barang</h5> 
+              </div> 
+          <?php }?>
             </div>
       </section>
 </body>
