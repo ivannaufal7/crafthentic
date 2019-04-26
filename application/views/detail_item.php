@@ -7,12 +7,21 @@
 			<div class="thumbnail-title">
 			<h2><?= $row->nama_brg?> </h2>
 			<h3>Rp.<?= $row->harga_brg?></h3>
+      <?php if($this->session->userdata('nama')!=FALSE) { ?>
       <form id='myform' method='POST' action='<?= base_url('index.php/detailitem_control/belibrg/').$row->id_brg?>'>
           <input type='button' value='-' class='qtyminus btn btn-login' field='quantity' />
           <input type='text' name='qty' value='1' class='qty' />
           <input type='button' value='+' class='qtyplus btn btn-login' field='quantity' />
           <input type="submit" id="belibrg">Beli Barang</input><br>
       </form>
+      <?php } else { ?>
+      <form id='myform' method='POST' action='<?= site_url('login_control/index')?>'>
+          <input type='button' value='-' class='qtyminus btn btn-login' field='quantity' />
+          <input type='text' name='qty' value='1' class='qty' />
+          <input type='button' value='+' class='qtyplus btn btn-login' field='quantity' />
+          <input type="submit" id="belibrg">Beli Barang</input><br>
+      </form>
+      <?php } ?>
 			
 			<button id="keranjang">+ Tambah Keranjang</button>
 		</div>

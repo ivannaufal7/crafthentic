@@ -65,12 +65,6 @@
                   <span class="badge badge-primary"><?= $row->kategori_brg?></span>
                   <h4 class="text-success" style="margin-top: 12px;">Rp.<?= $row->harga_brg?></h4>
                 </div>
-                <?php if($this->simple_login->cek_login() && $this->session->userdata('id') == $row->id_pengguna){?>
-                <div>
-                  <a href="" class="btn btn-info">Edit</a>
-                  <a href="<?= base_url('index.php/home/deleteBrg/').$row->id_brg?>" class="btn btn-danger">Delete</a>
-                </div>
-              <?php } ?>
               </div>
               </a>
             <?php
