@@ -22,7 +22,8 @@
 				<td>
 					<h3 id="userPhone"><?= $this->session->userdata('notelp')?></h2>
 				</td>
-				<td><button type="button" class="btnEdit">Edit Profile</td>
+
+				<td><a href="<?= site_url('profil_control/edit/')?><?= $this->session->userdata('id_pengguna')?>" ><button  style="margin-right:40px;" type="button" class="btnEdit">Edit Profile</button><a></td>
 			</tr>
 		</table>
 
@@ -123,7 +124,7 @@
     </section>    
 		</div>
 
-		<div id="wishlist" class="tabcontent">
+		<!-- <div id="wishlist" class="tabcontent">
 		  <h3>Paris</h3>
 		  <p>Paris is the capital of France.</p> 
 		</div>
@@ -136,7 +137,7 @@
     <div id="ulasan" class="tabcontent">
       <h3>Tokyo</h3>
       <p>Tokyo is the capital of Japan.</p>
-    </div>
+    </div> -->
 	</section>
 
 <script>
@@ -157,5 +158,4 @@
 </script>
 
 </body>
-
 </html>
