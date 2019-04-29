@@ -24,7 +24,6 @@ echo $qty;
 				<td>
 					<h3 id="userPhone"><?= $this->session->userdata('notelp')?></h2>
 				</td>
-				<td><button type="button" class="btnEdit">Edit Profile</td>
 			</tr>
 		</table>
 
