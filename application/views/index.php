@@ -16,7 +16,7 @@
         <div class="row item-danai">
             <?php foreach($umkm as$u){?>
             <div class="card" style="width:300px">
-                <img class="card-img-top img-fluid" src="<?= base_url('assets/img/slide2.png')?>" alt="Card image" style="width:100%">
+                <img class="card-img-top img-fluid" src="<?= base_url('assets/img/')?><?= $u['foto_umkm']?>" alt="Card image" style="width:100%">
                 <div class="card-body">
                   <h4 class="card-title"><?= $u['nama_umkm']?></h4>
                   <p class="card-text"><?= $u['deskripsi_umkm']?></p>
