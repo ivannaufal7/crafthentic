@@ -8,10 +8,12 @@ class Home extends CI_Controller {
          $this->load->library(array('form_validation'));
          $this->load->helper(array('url','form'));
          $this->load->model('M_barang');
+         $this->load->model('M_umkm');
     }
 	public function index()
 	{
 		$data['barang'] = $this->M_barang->getDataBarang();
+		$data['umkm'] = $this->M_umkm->get_umkm_data();
 		$this->load->view('index',$data);
 	}
 
