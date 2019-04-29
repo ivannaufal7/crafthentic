@@ -1,12 +1,11 @@
 <?php $this->load->view('page_header')?>
-<?php 
-echo $qty;
+<?php foreach ($user as $row) {
 ?>
 		<div class="mainProfile">
 		<table>
 			<tr class="profile">
 				<td><img class="icon" src="<?= base_url('assets/IMG/user.png')?>"></td>
-				<td colspan="2"><h1 id="userName"><?= $this->session->userdata('nama')?></h1></td>
+				<td colspan="2"><h1 id="userName"><?= $row['nama'] ?></h1></td>
 				
 			</tr>
 			<tr class="profile">
@@ -14,7 +13,7 @@ echo $qty;
 					<img class="icon" src="<?= base_url('assets/IMG/alamat.png')?>">
 				</td>
 				<td colspan="2">
-					<h3 id="userAddress"><?= $this->session->userdata('alamat')?></h2>
+					<h3 id="userAddress"><?= $row['alamat']?></h2>
 				</td>
 			</tr>
 			<tr class="profile">
@@ -22,14 +21,14 @@ echo $qty;
 					<img class="icon" src="<?= base_url('assets/IMG/telp.png')?>">
 				</td>
 				<td>
-					<h3 id="userPhone"><?= $this->session->userdata('notelp')?></h2>
+					<h3 id="userPhone"><?= $row['notelp']?></h2>
 				</td>
 			</tr>
 		</table>
 
 		
 	</div>
-
+<?php } ?>
 		<div style="margin-left: 64px; margin-top: 24px;">
 		<div style="font-size: 24px;">Barang yang dipesan</div>
 	</div>

@@ -23,6 +23,7 @@ class Detailitem_control extends CI_Controller {
          $this->load->library(array('form_validation'));
          $this->load->helper(array('url','form'));
          $this->load->model('M_barang');
+         $this->load->model('M_akun');
     }
 	public function index()
 	{
@@ -45,6 +46,8 @@ class Detailitem_control extends CI_Controller {
 			'harga_brg' => $query->harga_brg,
 			'foto' => $query->foto_brg
 		);
+		$id_pengguna = $this->session->userdata('id');
+		$data['user'] = $this->M_akun->get_specified_user($id_pengguna);
 		// print_r($data);																																
 		$this->load->view('belibarang',$data);
 	}
